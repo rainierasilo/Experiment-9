@@ -19,6 +19,9 @@ f =  pd.merge(geas, esat, how = 'outer', on = 'Student')
 
 final = pd.merge (e,f, how = 'outer', on = 'Student')
 
+xxx = pd.melt(final, id_vars = 'Student', value_vars = ['Math', 'Electronics', 'GEAS', 'ESAT' ])
+yyy = xxx.rename(columns = {'variable': 'Subject', 'value': 'Grades'})
+
 print(final)
 
 
